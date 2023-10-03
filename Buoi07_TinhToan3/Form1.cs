@@ -69,7 +69,7 @@ namespace Buoi07_TinhToan3
 
             if (message.Length > 0)
             {
-                MessageBox.Show(message, "Thông báo");
+                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox.Focus();
                 textBox.SelectAll();
                 return null;
