@@ -47,8 +47,16 @@ namespace Buoi07_TinhToan3
             else if (radTru.Checked) kq = so1 - so2;
             else if (radNhan.Checked) kq = so1 * so2;
             else if (radChia.Checked && so2 != 0) kq = so1 / so2;
-            //Hiển thị kết quả lên trên ô kết quả
-            txtKq.Text = kq.ToString();
+            else if (radChia.Checked && so2 == 0)
+            {
+                txtKq.Text = "";
+                MessageBox.Show("Không thể chia cho 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSo2.Focus();
+                txtSo2.SelectAll();
+                return;
+            }
+                //Hiển thị kết quả lên trên ô kết quả
+                txtKq.Text = kq.ToString();
         }
 
         private void txtSo1_Click(object sender, EventArgs e)
